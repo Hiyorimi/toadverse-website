@@ -5,6 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1e1d;
+  font-family: "Superscratchy" !important
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Superscratchy" !important
+}
+
+@font-face {
+  font-family: "Superscratchy";
+  src: url(./assets/superscratchy.5834894c.eot);
+  src: url(./assets/superscratchy.5834894c.eot) format("embedded-opentype"), url(./assets/superscratchy.9c1cdac2.woff) format("woff"), url(./assets/superscratchy.6b707067.ttf) format("truetype"), url(./assets/superscratchy.7067c826.svg) format("svg")
 }
 
 code {
