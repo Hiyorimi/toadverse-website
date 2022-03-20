@@ -9,3 +9,9 @@ This is an ongoing project deployed on the Rinkeby testnet. I am currently colla
 npm -i --save
 npm run start
 ```
+
+# Building for release
+
+```bash
+npm run build
+```
