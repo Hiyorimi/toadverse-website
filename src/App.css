@@ -38,8 +38,8 @@ body {
   z-index: 9;
 }
 
-
-.benefit_1,.benefit_2 {
+.benefit_1,
+.benefit_2 {
   width: 50%;
   /* position:absolute; */
   color: white;
@@ -87,30 +87,30 @@ body {
   pointer-events: none;
   position: absolute;
   z-index: -10;
-  background: url('assets/kv_web_lp.jpg') 50% 50% repeat-x;
+  background: url("assets/kv_web_lp.jpg") 50% 50% repeat-x;
   background-size: contain;
 }
 .background-image:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: url('assets/decor_top.png') 50% 0 no-repeat;
+  background: url("assets/decor_top.png") 50% 0 no-repeat;
   background-size: contain;
   margin-top: -6%;
 }
 .background-image:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: url('assets/decor_bottom.png') 50% 100% no-repeat;
+  background: url("assets/decor_bottom.png") 50% 100% no-repeat;
   background-size: contain;
 }
 
@@ -127,6 +127,7 @@ body {
 }
 
 .cta-button {
+  position: relative;
   height: 64px;
   border: 0;
   width: auto;
@@ -158,6 +159,41 @@ body {
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
   margin-right: 15px;
+}
+
+.button--loading {
+  background: -webkit-linear-gradient(left, #a000d687, #ff6fe077);
+}
+
+.button--loading .button__text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .opensea-button {
@@ -194,14 +230,12 @@ body {
   flex-direction: row;
 }
 
-
 .textBlockColumn {
   display: flex;
   width: 50%;
   max-width: 400px;
   margin-left: 50px;
 }
-
 
 #nnn-collectiv-big {
   width: 400px;
@@ -231,19 +265,18 @@ body {
     margin: 0 auto;
   }
 
-
   #vibemap {
     flex-direction: column;
   }
 
-  #nnn-collectiv-big { 
+  #nnn-collectiv-big {
     width: 100%;
     min-width: 250px;
     /* max-width: 200px; */
     text-align: center;
   }
 
-  #nnn-collectiv-big img { 
+  #nnn-collectiv-big img {
     width: 95%;
     padding: 2.5%;
   }
@@ -316,13 +349,11 @@ body {
   justify-content: space-around;
 }
 
-
 @media (max-width: 701px) {
   #teamMembers {
     flex-direction: column;
   }
 }
-
 
 .teamMember {
   display: flex;
@@ -330,18 +361,18 @@ body {
   margin-bottom: 20px;
 }
 
-@media(max-width: 701px) {
+@media (max-width: 701px) {
   #teamMembers {
-      flex-direction:column
+    flex-direction: column;
   }
   .teamMember {
-      margin-top: 20px
+    margin-top: 20px;
   }
   .footer-container {
-      flex-direction:column
+    flex-direction: column;
   }
   .textBlockColumn {
-    width: 90%!important;
+    width: 90% !important;
   }
 }
 
@@ -378,33 +409,54 @@ body {
   width: 100px;
 }
 
-.cta-block {margin-top: 15%;display: flex;flex-direction: row;align-items: stretch;flex-wrap: wrap;justify-content: center;}
-.cta-button-wrap {order: 5;width: 100%;margin-bottom: 4vh;}
-
-@media(orientation: portrait) {
-    .background-image {
-        background-size:cover;
-        max-height: 75%;
-        margin-top: 10%
-    }
-    .cta-button-wrap {order: 2;margin-top:5em;}
-    .benefit_1, .benefit_2 {width: 100%}
-    .logo_toadverse > img { width: 86%}
+.cta-block {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cta-button-wrap {
+  order: 5;
+  width: 100%;
+  margin-bottom: 4vh;
 }
 
-@media(max-width: 1480px) {
-    .background-image {
-        background-size:cover
-    }
+@media (orientation: portrait) {
+  .background-image {
+    background-size: cover;
+    max-height: 75%;
+    margin-top: 10%;
+  }
+  .cta-button-wrap {
+    order: 2;
+    margin-top: 5em;
+  }
+  .benefit_1,
+  .benefit_2 {
+    width: 100%;
+  }
+  .logo_toadverse > img {
+    width: 86%;
+  }
 }
 
-@media(min-aspect-ratio: 2/1) {
-    .background-image:after, .background-image:before {
-        background-size: cover;
-    }
-    .background-image {
-        background-size:cover
-    }
-    .logo_toadverse > img { max-width: 60%}
+@media (max-width: 1480px) {
+  .background-image {
+    background-size: cover;
+  }
+}
 
+@media (min-aspect-ratio: 2/1) {
+  .background-image:after,
+  .background-image:before {
+    background-size: cover;
+  }
+  .background-image {
+    background-size: cover;
+  }
+  .logo_toadverse > img {
+    max-width: 60%;
+  }
 }
